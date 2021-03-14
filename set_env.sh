@@ -1,8 +1,8 @@
 # This file is used for convenience of local development.
 # DO NOT STORE YOUR CREDENTIALS INTO GIT
-export POSTGRES_USERNAME=
-export POSTGRES_PASSWORD=
-export POSTGRES_HOST=
+export POSTGRES_USERNAME=msprojectdb
+export POSTGRES_PASSWORD=msprojectdb 
+export POSTGRES_HOST=msprojectdb.cypvvuioeqa0.us-west-1.rds.amazonaws.com
 export POSTGRES_DB=
 export AWS_BUCKET=
 export AWS_REGION=
