@@ -18,5 +18,4 @@ COPY . .
 EXPOSE 8080
 
 # Define Docker’s behavior when the image is run
-CMD ["npm", "run", "build"]
 CMD ["npm", "run", "prod"]
