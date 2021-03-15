@@ -11,7 +11,7 @@ stage:
   # - frontend
 
 jobs:
-  # include:
+  include:
   #   - stage: user
   #     name: "user backend service"
   #     script:
