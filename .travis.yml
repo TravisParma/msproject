@@ -29,7 +29,7 @@ jobs:
         - npm run build
         - docker --version # print the version for logging
         - docker build -t .
-        - docker tag udagram-api-feed $DOCKER_USERNAME/udagram-api-feed:latest
+        - docker tag udagram-api-feed "$DOCKER_USERNAME"/udagram-api-feed:latest
       after_success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker push $DOCKER_USERNAME/udagram-api-feed
+        - docker push "$DOCKER_USERNAME"/udagram-api-feed
