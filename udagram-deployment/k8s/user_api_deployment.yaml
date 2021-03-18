@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -6,14 +6,18 @@ metadata:
   name: user-api
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: user-api
   template:
     metadata:
       labels:
+        app: user-api
         service: user-api
     spec:
       containers:
-      - image: udagram-user
-        name: user-api
+      - image: travisparma/udagram-api-feed
+        name: udagram-api-user
         imagePullPolicy: Always  
         resources:
           requests:
