@@ -6,12 +6,23 @@ services:
   - docker
 
 stage:
+  - reverseproxy
   - user
   - feed
   - frontend
 
 jobs:
   include:
+    - stage: reverseproxy
+      name: "reverseproxy"
+      script:
+        - docker --version # print the version for logging
+        - docker build -t reverseproxy ./udagram-deployment/reverseproxy
+        - docker tag udagram-reverseproxy "$DOCKER_USERNAME"/reverseproxy:latest
+      after_success:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker push $DOCKER_USERNAME/reverseproxy
+
     - stage: frontend
       name: "frontend service"
       script:
