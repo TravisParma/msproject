@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 data:
   AWS_BUCKET: msproject-603289457229-dev
-  AWS_PROFILE: Default
+  AWS_PROFILE: default
   AWS_REGION: us-west-1
   JWT_SECRET: hello
   POSTGRES_DB: postgres
