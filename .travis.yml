@@ -18,7 +18,7 @@ jobs:
       script:
         - docker --version # print the version for logging
         - docker build -t reverseproxy ./reverseproxy
-        - docker tag udagram-reverseproxy "$DOCKER_USERNAME"/reverseproxy
+        - docker tag reverseproxy "$DOCKER_USERNAME"/reverseproxy:latest
       after_success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker push $DOCKER_USERNAME/reverseproxy
